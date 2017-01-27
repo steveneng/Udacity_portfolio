@@ -2,36 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Neighborhood Map Project</title>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <style>
+    </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row header">
-        <div class="col-md-12 info text-center">
-          <h1 id="head">Down For Coffee</h1>
+        <h1 style="font-weight:lighter" class="head col-md-12 text-center">Down For Coffee</h1>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="search"></div>
+        </div>
+        <div class="col-md-8">
+          <div id="map"></div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 search"></div>
-      </div>
-    </div>
-    <div id="map"></div>
-<script>
-  var map;
-  function initMap() {
-    // Constructor creates a new map - only center and zoom are required.
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7413549, lng: -73.9980244},
-      zoom: 13
-    });
-  }
-</script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrKla4CmCujFrbP3Pi7dDZ1sjnTmgWSn0&v=3&callback=initMap" async defer></script>
+    <!-- <div id="map"></div> -->
+    <!-- <div class="container">
+      <div class="option"></div>
+    </div> -->
+    <script>
+      var map;
+      function initMap() {
+        // Constructor creates a new map - only center and zoom are required.
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.7413549, lng: -73.9980244},
+          zoom: 13
+        });
+      }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrKla4CmCujFrbP3Pi7dDZ1sjnTmgWSn0&v=3&callback=initMap">
+    </script>
+
   </body>
 </html>
