@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <h1 style="font-weight:lighter" class="head col-md-12 text-center">Down For Coffee</h1>
+      </div>
+      <hr style="margin-bottom:30px">
+      <div class="row">
+        <div class="col-md-2">
+          <div style="padding: 30px" class="search">
+            <h5 style="font-weight:lighter; padding-bottom:7px">Let's Find Some Caffeine</h5>
+            <input type="text" name="narrow" value="" placeholder="narrowing....">
+            <button style="border-radius: 0px; border:none; font-weight:lighter" type="button" class="button btn">Search</button>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var map;
+      function initMap() {
+        // Constructor creates a new map - only center and zoom are required.
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.7413549, lng: -73.9980244},
+          zoom: 13
+        });
+      }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrKla4CmCujFrbP3Pi7dDZ1sjnTmgWSn0&v=3&callback=initMap">
+    </script>
+
+  </body>
+</html>

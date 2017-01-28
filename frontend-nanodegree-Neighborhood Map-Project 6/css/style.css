@@ -1,0 +1,32 @@
+
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 700px;
+}
+
+.search {
+  height: 700px;
+  background: #ECF0F3;
+}
+
+input {
+  width: 100%;
+}
+
+.button {
+  background-color:#FC8EAB;
+  margin-top:15px;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: #fcaec1;
+}
