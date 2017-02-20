@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
+    <script type='text/javascript' src='js/knockout-3.4.1.js'></script>
+    <script type="text/javascript" scr="js/app.js"></script>
     <style>
     </style>
   </head>
   <body>
-    <div class="container-fluid">
+    <div style="height: 80%" class="container-fluid">
       <div class="row">
         <h1 style="font-weight:lighter" class="head col-md-12 text-center">Down For Coffee</h1>
       </div>
       <hr style="margin-bottom:30px">
-      <div class="row">
+      <div style="height: 100%" class="row">
         <div class="col-md-3">
           <div style="padding: 30px" class="search">
             <h5 style="font-weight:lighter; padding-bottom:7px">Let's Find Some Caffeine</h5>
+            <h1 data-bind="text: firstName">derp</h1>
             <input type="text" name="narrow" value="" placeholder="narrowing....">
             <button style="border-radius: 0px; border:none; font-weight:lighter" type="button" class="button btn">Search</button>
           </div>
