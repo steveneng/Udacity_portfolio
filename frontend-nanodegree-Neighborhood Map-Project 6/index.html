@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Neighborhood Map Project With Knockout.JS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type='text/javascript' src='js/knockout-3.4.1.js'></script>
-    <style>
-    </style>
   </head>
   <body>
-    <div style="height: 80%" class="container-fluid">
+    <div class="content container-fluid">
       <div class="row">
-        <h1 style="font-weight:lighter" class="head col-md-12 text-center">Down For Coffee</h1>
+        <h1 class="head col-md-12 text-center">Down For Coffee</h1>
       </div>
-      <hr style="margin-bottom:30px">
-      <div style="height: 100%" class="row">
+      <hr>
+      <div class="content row">
         <div class="col-md-3">
-          <div style="padding: 30px" class="search">
-            <h5 style="font-weight:lighter; padding-bottom:7px">Let's Find Some Caffeine</h5>
-            <h1 data-bind="text: firstName">derp</h1>
-            <input type="text" name="narrow" value="" placeholder="narrowing....">
-            <button style="border-radius: 0px; border:none; font-weight:lighter" type="button" class="button btn">Search</button>
+          <div  class="search">
+            <div class="search_header">
+              <h5>Let's Find Some Caffeine</h5>
+            </div>
+            <div><h1><span data-bind="text: errorDisplay"></span></h1></div>
+            <div class="input_search">
+              <input type="text" name="narrow" value="" placeholder="narrowing...." data-bind="value: textInput, valueUpdate: 'keyup', event: {keyup: searchFilter}">
+            </div>
+            <button class="btn button" type="button" name="Hide all" data-bind="event:{click:hider} ">Hide/Appear</button>
+            <ul data-bind="foreach: arrayList">
+              <li data-bind="text: title, visible: show, click: $parent.picked"></li>
+            </ul>
           </div>
         </div>
         <div class="col-md-9">
@@ -31,20 +37,9 @@
         </div>
       </div>
     </div>
-    <script>
-      var map;
-      function initMap() {
-        // Constructor creates a new map - only center and zoom are required.
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.7413549, lng: -73.9980244},
-          zoom: 13
-        });
-      }
-    </script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrKla4CmCujFrbP3Pi7dDZ1sjnTmgWSn0&v=3&callback=initMap">
-    </script>
-  <script type="text/javascript" scr="js/app.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrKla4CmCujFrbP3Pi7dDZ1sjnTmgWSn0&v=3&callback=initMap" onerror="errorDisplay()">
+  </script>
   </body>
 </html>
